@@ -23,7 +23,7 @@ public class ZippedMultipleFiles {
 
                     // begin writing a new ZIP entry, positions the stream to the start of the entry data
                     zos.putNextEntry(new ZipEntry("arquivo" + i + ".txt"));
-                    int length;
+                    
                     zos.write(("Arquivo de testes " + i).getBytes());
 
                     zos.closeEntry();
