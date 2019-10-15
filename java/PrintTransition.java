@@ -1,4 +1,5 @@
 import java.time.Instant;
+import java.time.LocalDate;
 import java.time.ZoneId;
 import java.time.zone.ZoneOffsetTransition;
 import java.time.zone.ZoneRules;
@@ -10,10 +11,10 @@ public class PrintTransition {
 
         ZoneRules rules = zoneId.getRules();
 
-        LocalDate date = LocalDate.parse("2018-01-01");
+        LocalDate date = LocalDate.parse("2019-10-25");
         Instant instant = date.atStartOfDay(ZoneId.of("America/Sao_Paulo")).toInstant();
 
-        ZoneOffsetTransition nextTransition = rules.nextTransition(Instant.from(instant));
+        ZoneOffsetTransition nextTransition = rules.nextTransition(instant);
 
         System.out.println("Next transition at: " +
                 nextTransition.getInstant().atZone(zoneId));
