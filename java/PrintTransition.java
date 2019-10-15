@@ -6,11 +6,15 @@ import java.time.zone.ZoneRules;
 public class PrintTransition {
 
     public static void main(String args[]) {
+ZoneId zoneId = ZoneId.of("America/Sao_Paulo");
 
-        ZoneId zoneId = ZoneId.of("America/Sao_Paulo");
         ZoneRules rules = zoneId.getRules();
 
-        ZoneOffsetTransition nextTransition = rules.nextTransition(Instant.now());
+        LocalDate date = LocalDate.parse("2018-01-01");
+        Instant instant = date.atStartOfDay(ZoneId.of("America/Sao_Paulo")).toInstant();
+
+        ZoneOffsetTransition nextTransition = rules.nextTransition(Instant.from(instant));
+
         System.out.println("Next transition at: " +
                 nextTransition.getInstant().atZone(zoneId));
 
