@@ -6,7 +6,7 @@ import java.time.zone.ZoneRules;
 public class PrintTransition {
 
     public static void main(String args[]) {
-ZoneId zoneId = ZoneId.of("America/Sao_Paulo");
+        ZoneId zoneId = ZoneId.of("America/Sao_Paulo");
 
         ZoneRules rules = zoneId.getRules();
 
