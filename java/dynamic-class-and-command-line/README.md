@@ -18,6 +18,7 @@ jar cf notes.jar com/teste/*.class
 ```
 or, passing "e" option to specify the entrypoint:
 
+```
 jar cfe meujar.jar Main Main.class MyClassLoader.class phone/*.class
 ```
 By this way, we shouldn't specify a main class when execute the jar with 'java -jar meujar.jar'
